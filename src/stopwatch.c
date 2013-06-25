@@ -129,9 +129,7 @@ void stopwatch_handle_timer(AppContextRef ctx, AppTimerHandle handle) {
     int seconds_now = get_ticks_now_in_seconds();
     int current_seconds = seconds_now - stopwatch_start;
 
-    //reset internal milliseconds on tick to reset drift
-    //it seems to go slower the more items are drawn on screen
-    //try to compensate it a little
+    //reset internal milliseconds on tick to reset drift    
     if( stopwatch_seconds != current_seconds ) {	
 	stopwatch_seconds = current_seconds;
 	internal_milliseconds = 0;
